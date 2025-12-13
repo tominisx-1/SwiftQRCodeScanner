@@ -129,11 +129,11 @@ public class QRCodeScannerController: UIViewController,
         
         self.presentationController?.delegate = self
         
-        if !qrScannerConfiguration.hideNavigationBar {
-            configureNavigationBar()
-        } else {
-            addCloseButton()
-        }
+//        if !qrScannerConfiguration.hideNavigationBar {
+//            configureNavigationBar()
+//        } else {
+//            addCloseButton()
+//        }
     
         // Currently, only "Portrait" mode is supported
         setDeviceOrientation()
