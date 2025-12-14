@@ -533,7 +533,8 @@ extension QRCodeScannerController {
     private func addHintTextLayer(maskLayer: CAShapeLayer) {
         guard let hint = qrScannerConfiguration.hint else { return }
         let hintTextLayer = CATextLayer()
-        hintTextLayer.fontSize = 18.0
+//        hintTextLayer.fontSize = 18.0
+        hintTextLayer.font = qrScannerConfiguration.hintFont
         hintTextLayer.string = hint
         hintTextLayer.alignmentMode = .center
         hintTextLayer.contentsScale = UIScreen.main.scale

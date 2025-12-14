@@ -14,6 +14,7 @@ public struct QRScannerConfiguration {
     // MARK: - Properties
     
     public var title: String
+    public var hintFont: UIFont
     public var hint: String?
     public var invalidQRCodeAlertTitle: String
     public var invalidQRCodeAlertActionTitle: String
@@ -33,6 +34,7 @@ public struct QRScannerConfiguration {
     // MARK: - Initializers
     
     public init(title: String = "Scan QR Code",
+                hintFont: UIFont = UIFont.systemFont(ofSize: 14.0),
                 hint: String? = "Align QR code within frame to scan",
                 uploadFromPhotosTitle: String = "Upload from photos",
                 invalidQRCodeAlertTitle: String = "Invalid QR Code",
@@ -49,6 +51,7 @@ public struct QRScannerConfiguration {
                 cancelButtonTintColor: UIColor? = nil,
                 hideNavigationBar: Bool = false) {
         self.title = title
+        self.hintFont = hintFont
         self.hint = hint
         self.uploadFromPhotosTitle = uploadFromPhotosTitle
         self.invalidQRCodeAlertTitle = invalidQRCodeAlertTitle
