@@ -530,21 +530,47 @@ extension QRCodeScannerController {
     /// Adds hint text layer above the mask layer.
     ///
     /// - Parameter maskLayer: The mask layer to which the hint text layer will be added.
+//    private func addHintTextLayer(maskLayer: CAShapeLayer) {
+//        guard let hint = qrScannerConfiguration.hint else { return }
+//        let hintTextLayer = CATextLayer()
+////        hintTextLayer.fontSize = 18.0
+//        hintTextLayer.font = qrScannerConfiguration.hintFont
+//        hintTextLayer.string = hint
+//        hintTextLayer.alignmentMode = .center
+//        hintTextLayer.contentsScale = UIScreen.main.scale
+//        hintTextLayer.frame = CGRect(x: spaceFactor,
+//                                     y: self.view.frame.midY - self.view.frame.size.height/4 - 62,
+//                                     width: view.frame.size.width - (2.0 * spaceFactor),
+//                                     height: 22)
+//        hintTextLayer.foregroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
+//        view.layer.insertSublayer(hintTextLayer, above: maskLayer)
+//    }
+    
+    
     private func addHintTextLayer(maskLayer: CAShapeLayer) {
         guard let hint = qrScannerConfiguration.hint else { return }
+        
         let hintTextLayer = CATextLayer()
-//        hintTextLayer.fontSize = 18.0
         hintTextLayer.font = qrScannerConfiguration.hintFont
+        hintTextLayer.fontSize = qrScannerConfiguration.hintFont.pointSize
         hintTextLayer.string = hint
         hintTextLayer.alignmentMode = .center
+        hintTextLayer.isWrapped = true
+        hintTextLayer.truncationMode = .none
         hintTextLayer.contentsScale = UIScreen.main.scale
-        hintTextLayer.frame = CGRect(x: spaceFactor,
-                                     y: self.view.frame.midY - self.view.frame.size.height/4 - 62,
-                                     width: view.frame.size.width - (2.0 * spaceFactor),
-                                     height: 22)
+        
+        hintTextLayer.frame = CGRect(
+            x: spaceFactor,
+            y: self.view.frame.midY - self.view.frame.size.height / 4 - 62,
+            width: view.frame.size.width - (2.0 * spaceFactor),
+            height: 60 // increased for multi-line
+        )
+        
         hintTextLayer.foregroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
-        view.layer.insertSublayer(hintTextLayer, above: maskLayer)
+        view.layer.addSublayer(hintTextLayer)
     }
+
+    
 }
 
 // MARK: - DebugLog
