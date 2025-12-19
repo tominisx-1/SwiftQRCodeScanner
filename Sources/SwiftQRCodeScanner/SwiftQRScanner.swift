@@ -134,6 +134,8 @@ public class QRCodeScannerController: UIViewController,
 //        } else {
 //            addCloseButton()
 //        }
+        
+        configureNavigationBar()
     
         // Currently, only "Portrait" mode is supported
         setDeviceOrientation()

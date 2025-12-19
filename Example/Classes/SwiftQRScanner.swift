@@ -290,7 +290,9 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         if captureSession.isRunning {
             return
         }
-        captureSession.startRunning()
+        DispatchQueue.global(qos: .background).async {
+            self.captureSession.startRunning()
+        }
     }
     
     private func setupCaptureSession(_ devicePostion: AVCaptureDevice.Position) {

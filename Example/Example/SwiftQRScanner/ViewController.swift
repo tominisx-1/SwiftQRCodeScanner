@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         //let scanner = QRCodeScannerController()
         
         //QRCode with Camera switch and Torch
-        let scanner = QRCodeScannerController(cameraImage: UIImage(named: "camera"), cancelImage: UIImage(named: "cancel"), flashOnImage: UIImage(named: "flash-on"), flashOffImage: UIImage(named: "flash-off"))
+        let scanner = QRCodeScannerController()
         scanner.delegate = self
         self.present(scanner, animated: true, completion: nil)
     }
