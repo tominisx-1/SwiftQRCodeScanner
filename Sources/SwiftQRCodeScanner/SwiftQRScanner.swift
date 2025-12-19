@@ -151,7 +151,7 @@ public class QRCodeScannerController: UIViewController,
     
     private func configureNavigationBar() {
         let navigationBar = UINavigationBar(frame: CGRect(x: 0,
-                                                          y: 0,
+                                                          y: 100,
                                                           width: view.frame.size.width,
                                                           height: 44))
         navigationBar.shadowImage = UIImage()
