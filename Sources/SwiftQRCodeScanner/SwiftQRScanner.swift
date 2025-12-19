@@ -135,6 +135,17 @@ public class QRCodeScannerController: UIViewController,
 //            addCloseButton()
 //        }
         
+        
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "xmark"),
+                style: .plain,
+                target: scanner,
+                action: #selector(dismissViewController)
+        )
+
+
     
         // Currently, only "Portrait" mode is supported
         setDeviceOrientation()
@@ -142,6 +153,11 @@ public class QRCodeScannerController: UIViewController,
         prepareQRScannerView()
         startScanningQRCode()
     }
+    
+    
+    
+    
+    
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
