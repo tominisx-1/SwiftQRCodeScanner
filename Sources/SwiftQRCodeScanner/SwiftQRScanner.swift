@@ -135,7 +135,6 @@ public class QRCodeScannerController: UIViewController,
 //            addCloseButton()
 //        }
         
-        configureNavigationBar()
     
         // Currently, only "Portrait" mode is supported
         setDeviceOrientation()
@@ -151,7 +150,7 @@ public class QRCodeScannerController: UIViewController,
     
     private func configureNavigationBar() {
         let navigationBar = UINavigationBar(frame: CGRect(x: 0,
-                                                          y: 100,
+                                                          y: 0,
                                                           width: view.frame.size.width,
                                                           height: 44))
         navigationBar.shadowImage = UIImage()
