@@ -141,7 +141,7 @@ public class QRCodeScannerController: UIViewController,
         navigationItem.rightBarButtonItem = UIBarButtonItem(
                 image: UIImage(systemName: "xmark"),
                 style: .plain,
-                target: scanner,
+                target: self,
                 action: #selector(dismissViewController)
         )
 
